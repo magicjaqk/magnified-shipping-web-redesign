@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <ChakraProvider theme={CustomTheme}>
+      <ChakraProvider theme={CustomTheme} resetCSS>
         <Nav />
         <Component {...pageProps} />
         <Footer />

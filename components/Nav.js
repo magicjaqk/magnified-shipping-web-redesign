@@ -3,7 +3,6 @@ import {
   Flex,
   Stack,
   Text,
-  Link,
   Button,
   Image,
   useBreakpointValue,
@@ -15,7 +14,7 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 import { useRef } from "react";
-import { Link as NextLink } from "next/link";
+import Link from "next/link";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Nav = () => {
@@ -51,25 +50,35 @@ const Nav = () => {
               fontWeight="medium"
               fontSize="18px"
             >
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/contact">Contact</Link>
-              <Link href="/jobs">Jobs</Link>
-              <Button
-                borderRadius="2px"
-                bg="primary"
-                _hover={{ bg: "#004C8F" }}
-                _active={{ bg: "primary" }}
-              >
-                <Text
-                  fontSize="18px"
-                  textColor="light"
-                  fontWeight="medium"
-                  px={4}
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+              <Link href="/contact">
+                <a>Contact</a>
+              </Link>
+              <Link href="/jobs">
+                <a>Jobs</a>
+              </Link>
+              <Link href="https://msslogin.com/">
+                <Button
+                  borderRadius="2px"
+                  bg="primary"
+                  _hover={{ bg: "#004C8F" }}
+                  _active={{ bg: "primary" }}
                 >
-                  Sign In
-                </Text>
-              </Button>
+                  <Text
+                    fontSize="18px"
+                    textColor="light"
+                    fontWeight="medium"
+                    px={4}
+                  >
+                    Sign In
+                  </Text>
+                </Button>
+              </Link>
             </Stack>
           ) : (
             <>
@@ -101,25 +110,35 @@ const Nav = () => {
                         fontWeight="medium"
                         fontSize="18px"
                       >
-                        <Link href="/">Home</Link>
-                        <Link href="/about">About</Link>
-                        <Link href="/contact">Contact</Link>
-                        <Link href="/jobs">Jobs</Link>
-                        <Button
-                          borderRadius="2px"
-                          bg="primary"
-                          _hover={{ bg: "#004C8F" }}
-                          _active={{ bg: "primary" }}
-                        >
-                          <Text
-                            textColor="light"
-                            fontWeight="medium"
-                            fontSize="18px"
-                            px={4}
+                        <Link href="/">
+                          <a>Home</a>
+                        </Link>
+                        <Link href="/about">
+                          <a>About</a>
+                        </Link>
+                        <Link href="/contact">
+                          <a>Contact</a>
+                        </Link>
+                        <Link href="/jobs">
+                          <a>Jobs</a>
+                        </Link>
+                        <Link href="https://msslogin.com/">
+                          <Button
+                            borderRadius="2px"
+                            bg="primary"
+                            _hover={{ bg: "#004C8F" }}
+                            _active={{ bg: "primary" }}
                           >
-                            Sign In
-                          </Text>
-                        </Button>
+                            <Text
+                              fontSize="18px"
+                              textColor="light"
+                              fontWeight="medium"
+                              px={4}
+                            >
+                              Sign In
+                            </Text>
+                          </Button>
+                        </Link>
                       </Stack>
                     </DrawerBody>
                   </DrawerContent>
@@ -129,6 +148,11 @@ const Nav = () => {
           )}
         </Flex>
       </Box>
+      <style jsx>{`
+        a:hover {
+          text-decoration: underline;
+        }
+      `}</style>
     </>
   );
 };
