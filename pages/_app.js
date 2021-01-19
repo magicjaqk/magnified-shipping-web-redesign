@@ -3,6 +3,7 @@ import CustomTheme from "../styles/CustomTheme";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps }) {
       <ChakraProvider theme={CustomTheme}>
         <Nav />
         <Component {...pageProps} />
+        <Footer />
       </ChakraProvider>
     </>
   );

@@ -1,8 +1,14 @@
-import { Box, Text, useMediaQuery, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  useMediaQuery,
+  Flex,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import Head from "next/head";
 
 const Home = () => {
-  const [isSmallWidth] = useMediaQuery("(min-width: 650px)");
+  const isLargerThan650 = useBreakpointValue({ base: false, md: true });
 
   return (
     <>
@@ -17,7 +23,7 @@ const Home = () => {
             textColor="light"
             fontSize="imgText"
             textAlign="center"
-            py={isSmallWidth ? "1.5em" : ".5em"}
+            py={isLargerThan650 ? "1.5em" : ".5em"}
             w="100%"
             background="no-repeat center/cover url(/img/klara-vernarcova-XfNlY47n6K8-unsplash_01.jpg)"
           >
@@ -36,7 +42,7 @@ const Home = () => {
             Magnified Customer Benefits
           </Text>
           <Flex
-            flexDir={isSmallWidth ? "row" : "column"}
+            flexDir={isLargerThan650 ? "row" : "column"}
             justifyContent="space-around"
             alignItems="center"
             w="80%"

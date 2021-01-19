@@ -1,27 +1,26 @@
 import {
   Box,
-  Icon,
   Flex,
   Stack,
   Text,
   Link,
   Button,
   Image,
-  useMediaQuery,
+  useBreakpointValue,
   useDisclosure,
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Input,
 } from "@chakra-ui/react";
 import { useRef } from "react";
+//import { Link as NextLink } from "next/link";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Nav = () => {
-  const [isLargerThan650] = useMediaQuery("(min-width: 650px)");
+  const isLargerThan650 = useBreakpointValue({ base: false, md: true });
+  //const [isLargerThan650] = useMediaQuery("(min-width: 650px)");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
@@ -50,11 +49,12 @@ const Nav = () => {
               alignItems="center"
               fontFamily="nav"
               fontWeight="medium"
+              fontSize="18px"
             >
-              <Link fontSize="18px">Home</Link>
-              <Link fontSize="18px">About</Link>
-              <Link fontSize="18px">Contact</Link>
-              <Link fontSize="18px">Jobs</Link>
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/jobs">Jobs</Link>
               <Button
                 borderRadius="2px"
                 bg="primary"
@@ -80,7 +80,7 @@ const Nav = () => {
                 textColor="dark"
               >
                 <Text fontSize="18px" fontWeight="bold" px={4}>
-                  Menu
+                  <HamburgerIcon w={6} h={6} />
                 </Text>
               </Button>
               <Drawer
@@ -92,33 +92,36 @@ const Nav = () => {
                 <DrawerOverlay>
                   <DrawerContent>
                     <DrawerCloseButton />
-                    <Stack
-                      mt={10}
-                      spacing={7}
-                      alignItems="center"
-                      fontFamily="nav"
-                      fontWeight="medium"
-                    >
-                      <Link fontSize="18px">Home</Link>
-                      <Link fontSize="18px">About</Link>
-                      <Link fontSize="18px">Contact</Link>
-                      <Link fontSize="18px">Jobs</Link>
-                      <Button
-                        borderRadius="2px"
-                        bg="primary"
-                        _hover={{ bg: "#004C8F" }}
-                        _active={{ bg: "primary" }}
+                    <DrawerBody>
+                      <Stack
+                        mt={12}
+                        spacing={7}
+                        alignItems="center"
+                        fontFamily="nav"
+                        fontWeight="medium"
+                        fontSize="18px"
                       >
-                        <Text
-                          fontSize="18px"
-                          textColor="light"
-                          fontWeight="medium"
-                          px={4}
+                        <Link href="/">Home</Link>
+                        <Link href="/about">About</Link>
+                        <Link href="/contact">Contact</Link>
+                        <Link href="/jobs">Jobs</Link>
+                        <Button
+                          borderRadius="2px"
+                          bg="primary"
+                          _hover={{ bg: "#004C8F" }}
+                          _active={{ bg: "primary" }}
                         >
-                          Sign In
-                        </Text>
-                      </Button>
-                    </Stack>
+                          <Text
+                            textColor="light"
+                            fontWeight="medium"
+                            fontSize="18px"
+                            px={4}
+                          >
+                            Sign In
+                          </Text>
+                        </Button>
+                      </Stack>
+                    </DrawerBody>
                   </DrawerContent>
                 </DrawerOverlay>
               </Drawer>
