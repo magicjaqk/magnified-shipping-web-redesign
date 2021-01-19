@@ -24,6 +24,7 @@ const Home = () => {
             fontSize="imgText"
             textAlign="center"
             py={isLargerThan650 ? "1.5em" : ".5em"}
+            px={2}
             w="100%"
             background="no-repeat center/cover url(/img/klara-vernarcova-XfNlY47n6K8-unsplash_01.jpg)"
           >

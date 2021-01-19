@@ -111,16 +111,16 @@ const Nav = () => {
                         fontSize="18px"
                       >
                         <Link href="/">
-                          <a>Home</a>
+                          <a onClick={() => onClose()}>Home</a>
                         </Link>
                         <Link href="/about">
-                          <a>About</a>
+                          <a onClick={() => onClose()}>About</a>
                         </Link>
                         <Link href="/contact">
-                          <a>Contact</a>
+                          <a onClick={() => onClose()}>Contact</a>
                         </Link>
                         <Link href="/jobs">
-                          <a>Jobs</a>
+                          <a onClick={() => onClose()}>Jobs</a>
                         </Link>
                         <Link href="https://msslogin.com/">
                           <Button
@@ -128,6 +128,7 @@ const Nav = () => {
                             bg="primary"
                             _hover={{ bg: "#004C8F" }}
                             _active={{ bg: "primary" }}
+                            onClick={() => onClose()}
                           >
                             <Text
                               fontSize="18px"
