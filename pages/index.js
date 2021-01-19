@@ -1,11 +1,4 @@
-import {
-  Box,
-  Image,
-  Center,
-  Text,
-  useMediaQuery,
-  Flex,
-} from "@chakra-ui/react";
+import { Box, Text, useMediaQuery, Flex } from "@chakra-ui/react";
 import Head from "next/head";
 
 const Home = () => {
