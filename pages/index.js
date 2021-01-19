@@ -1,65 +1,61 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import {
+  Box,
+  Image,
+  Center,
+  Text,
+  useMediaQuery,
+  Flex,
+} from "@chakra-ui/react";
+import Head from "next/head";
 
-export default function Home() {
+const Home = () => {
+  const [isSmallWidth] = useMediaQuery("(min-width: 650px)");
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Magnified Shipping Solutions</title>
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
+      <Box w="100%" minH="100vh" bgColor="light">
+        <Box w="100%" overflow="hidden">
+          <Text
+            fontFamily="imgText"
+            fontWeight="bold"
+            textColor="light"
+            fontSize="imgText"
+            textAlign="center"
+            py={isSmallWidth ? "1.5em" : ".5em"}
+            w="100%"
+            background="no-repeat center/cover url(/img/klara-vernarcova-XfNlY47n6K8-unsplash_01.jpg)"
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
+            Make your shipping life easy.
+          </Text>
+        </Box>
+        <Flex flexDir="column" w="100%" alignItems="center">
+          <Text
+            fontFamily="body"
+            fontSize="bodyHeader"
+            textColor="dark"
+            textAlign="center"
+            p={1}
+            my={6}
           >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+            Magnified Customer Benefits
+          </Text>
+          <Flex
+            flexDir={isSmallWidth ? "row" : "column"}
+            justifyContent="space-around"
+            alignItems="center"
+            w="80%"
+          >
+            <Box my={2} borderRadius="100%" boxSize="200px" bg="#309301"></Box>
+            <Box my={2} borderRadius="100%" boxSize="200px" bg="primary"></Box>
+            <Box my={2} borderRadius="100%" boxSize="200px" bg="danger"></Box>
+          </Flex>
+        </Flex>
+      </Box>
+    </>
+  );
+};
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
-}
+export default Home;
