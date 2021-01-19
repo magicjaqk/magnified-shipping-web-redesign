@@ -14,7 +14,7 @@ const Footer = () => {
         w="100%"
         p={5}
         minH="170px"
-        align="center"
+        align={useBreakpointValue({ base: "flex-start", md: "center" })}
         justify="space-around"
         textColor="light"
       >

@@ -15,7 +15,7 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 import { useRef } from "react";
-//import { Link as NextLink } from "next/link";
+import { Link as NextLink } from "next/link";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Nav = () => {
