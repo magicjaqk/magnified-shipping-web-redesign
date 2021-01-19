@@ -191,6 +191,7 @@ const Home = () => {
           justify="space-around"
           align="center"
           minH="400px"
+          maxW="100%"
         >
           <HStack my={3} align="start">
             <Square
