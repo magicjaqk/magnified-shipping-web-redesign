@@ -131,13 +131,13 @@ const Home = () => {
           minH="500px"
           bg="dark"
           flexDir={isLargerThan650 ? "row" : "column"}
-          justify={isLargerThan650 ? "space-around" : "flex-start"}
+          justify={isLargerThan650 ? "space-around" : "center"}
           align="center"
         >
           <Text
             as="h1"
             textColor="secondary"
-            fontSize="calc(48px + 1.5vw)"
+            fontSize={isLargerThan650 ? "48px" : "38px"}
             maxW="650px"
             px={8}
           >
@@ -146,9 +146,8 @@ const Home = () => {
           <Text
             as="ul"
             textColor="light"
-            fontSize="calc(20px + 1vw)"
-            px={8}
-            ml={!isLargerThan650 && 4}
+            fontSize={isLargerThan650 ? "36px" : "20px"}
+            px={1}
             fontWeight="light"
           >
             <li>
@@ -194,11 +193,26 @@ const Home = () => {
           minH="400px"
         >
           <HStack my={3} align="start">
-            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+            <Square
+              size={isLargerThan650 ? "130px" : "65px"}
+              bg="primary"
+              mt={3}
+              borderRadius={3}
+            >
               <Icon as={MailBulk} color="light" boxSize="80%" />
             </Square>
-            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
-              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+            <Flex
+              flexDir="column"
+              ml={3}
+              maxW="400px"
+              justifyContent="flex-start"
+            >
+              <Text
+                as="h4"
+                fontSize={isLargerThan650 ? "36px" : "30px"}
+                fontWeight="light"
+                py="0px"
+              >
                 Small Parcel Delivery
               </Text>
               <Text fontWeight="light" fontSize="16px" pt="0px">
@@ -210,11 +224,26 @@ const Home = () => {
             </Flex>
           </HStack>
           <HStack my={3} align="start">
-            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+            <Square
+              size={isLargerThan650 ? "130px" : "65px"}
+              bg="primary"
+              mt={3}
+              borderRadius={3}
+            >
               <Icon as={FlagUsa} color="light" boxSize="80%" />
             </Square>
-            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
-              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+            <Flex
+              flexDir="column"
+              ml={3}
+              maxW="400px"
+              justifyContent="flex-start"
+            >
+              <Text
+                as="h4"
+                fontSize={isLargerThan650 ? "36px" : "30px"}
+                fontWeight="light"
+                py="0px"
+              >
                 Domestic Shipments
               </Text>
               <Text fontWeight="light" fontSize="16px" pt="0px">
@@ -226,11 +255,26 @@ const Home = () => {
             </Flex>
           </HStack>
           <HStack my={3} align="start">
-            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+            <Square
+              size={isLargerThan650 ? "130px" : "65px"}
+              bg="primary"
+              mt={3}
+              borderRadius={3}
+            >
               <Icon as={GlobeAmericas} color="light" boxSize="80%" />
             </Square>
-            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
-              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+            <Flex
+              flexDir="column"
+              ml={3}
+              maxW="400px"
+              justifyContent="flex-start"
+            >
+              <Text
+                as="h4"
+                fontSize={isLargerThan650 ? "36px" : "30px"}
+                fontWeight="light"
+                py="0px"
+              >
                 International Shipments
               </Text>
               <Text fontWeight="light" fontSize="16px" pt="0px">
@@ -242,11 +286,26 @@ const Home = () => {
             </Flex>
           </HStack>
           <HStack my={3} align="start">
-            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+            <Square
+              size={isLargerThan650 ? "130px" : "65px"}
+              bg="primary"
+              mt={3}
+              borderRadius={3}
+            >
               <Icon as={Truck} color="light" boxSize="80%" />
             </Square>
-            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
-              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+            <Flex
+              flexDir="column"
+              ml={3}
+              maxW="400px"
+              justifyContent="flex-start"
+            >
+              <Text
+                as="h4"
+                fontSize={isLargerThan650 ? "36px" : "30px"}
+                fontWeight="light"
+                py="0px"
+              >
                 LTL/FTL Freight
               </Text>
               <Text fontWeight="light" fontSize="16px" pt="0px">
