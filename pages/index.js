@@ -8,8 +8,12 @@ import {
   Flex,
   useBreakpointValue,
   Center,
+  Square,
+  HStack,
 } from "@chakra-ui/react";
 import Head from "next/head";
+import { RightArrow } from "styled-icons/boxicons-regular";
+import { FlagUsa, GlobeAmericas, MailBulk, Truck } from "styled-icons/fa-solid";
 
 const Home = () => {
   const isLargerThan650 = useBreakpointValue({ base: false, md: true });
@@ -122,7 +126,145 @@ const Home = () => {
             </Box>
           </Flex>
         </Flex>
+        <Flex
+          w="100%"
+          minH="500px"
+          bg="dark"
+          flexDir={isLargerThan650 ? "row" : "column"}
+          justify={isLargerThan650 ? "space-around" : "flex-start"}
+          align="center"
+        >
+          <Text
+            as="h1"
+            textColor="secondary"
+            fontSize="calc(48px + 1.5vw)"
+            maxW="650px"
+            px={8}
+          >
+            Our customers work in a diverse set of industries:
+          </Text>
+          <Text
+            as="ul"
+            textColor="light"
+            fontSize="calc(20px + 1vw)"
+            px={8}
+            ml={!isLargerThan650 && 4}
+            fontWeight="light"
+          >
+            <li>
+              <Icon as={RightArrow} p={2} mb={1} /> Consumer Products
+            </li>
+            <li>
+              <Icon as={RightArrow} p={2} mb={1} /> Industrial
+            </li>
+            <li>
+              <Icon as={RightArrow} p={2} mb={1} /> Technology and Electronics
+            </li>
+            <li>
+              <Icon as={RightArrow} p={2} mb={1} /> Pharmaceutical and Health
+              Care
+            </li>
+            <li>
+              <Icon as={RightArrow} p={2} mb={1} /> Food Service and
+              Consolidation
+            </li>
+            <li>
+              <Icon as={RightArrow} p={2} mb={1} /> Etc.
+            </li>
+          </Text>
+        </Flex>
+        <Text
+          w="100%"
+          minH="400px"
+          textColor="light"
+          fontSize={isLargerThan650 ? "imgText" : "54px"}
+          textAlign="center"
+          verticalAlign="middle"
+          p={isLargerThan650 ? "2em" : 3}
+          background="no-repeat center/cover url(img/klara-vernarcova-60zqbdiLHg0-unsplash.jpg)"
+          bgPos="50% 45%"
+        >
+          We’re with you and your package every step of the way.
+        </Text>
+        <Flex
+          p={4}
+          flexWrap="wrap"
+          justify="space-around"
+          align="center"
+          minH="400px"
+        >
+          <HStack my={3} align="start">
+            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+              <Icon as={MailBulk} color="light" boxSize="80%" />
+            </Square>
+            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
+              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+                Small Parcel Delivery
+              </Text>
+              <Text fontWeight="light" fontSize="16px" pt="0px">
+                Getting packages from point A to point B is critical for most
+                business. We can provide many options and choices on how to get
+                them there, and we can always find some way to make it more
+                economical for you.
+              </Text>
+            </Flex>
+          </HStack>
+          <HStack my={3} align="start">
+            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+              <Icon as={FlagUsa} color="light" boxSize="80%" />
+            </Square>
+            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
+              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+                Domestic Shipments
+              </Text>
+              <Text fontWeight="light" fontSize="16px" pt="0px">
+                Economical shipping services can make or break a small
+                businesses budget. Magnified Shipping Solutions focuses on
+                providing the best value for those businesses who are looking to
+                expand and grow with the ever changing business market.
+              </Text>
+            </Flex>
+          </HStack>
+          <HStack my={3} align="start">
+            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+              <Icon as={GlobeAmericas} color="light" boxSize="80%" />
+            </Square>
+            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
+              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+                International Shipments
+              </Text>
+              <Text fontWeight="light" fontSize="16px" pt="0px">
+                Magnified Shipping Solutions has created relationships with
+                multiple carriers to provide the absolute best options for
+                import , export, and country to country shipping of goods and
+                documents.
+              </Text>
+            </Flex>
+          </HStack>
+          <HStack my={3} align="start">
+            <Square size="130px" bg="primary" mt={3} borderRadius={3}>
+              <Icon as={Truck} color="light" boxSize="80%" />
+            </Square>
+            <Flex flexDir="column" ml={3} w="400px" justifyContent="flex-start">
+              <Text as="h4" fontSize="36px" fontWeight="light" py="0px">
+                LTL/FTL Freight
+              </Text>
+              <Text fontWeight="light" fontSize="16px" pt="0px">
+                Choice is everything when it comes to freight. Some carriers
+                handle some lanes better than others and price accordingly.
+                Having access to 60+ carriers quoting your shipments from one
+                login, you’ll know you’re getting the best rates with the
+                shortest delivery times.
+              </Text>
+            </Flex>
+          </HStack>
+        </Flex>
       </Box>
+      <style jsx>{`
+        li {
+          list-style-type: none;
+        }
+      `}</style>
     </>
   );
 };
