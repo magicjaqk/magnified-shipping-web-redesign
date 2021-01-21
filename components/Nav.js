@@ -33,14 +33,18 @@ const Nav = () => {
           h="100%"
           p={4}
         >
-          <Image
-            src="/img/magnified-logo.png"
-            h="70px"
-            top="0"
-            left="0"
-            position="absolute"
-            mr="auto"
-          />
+          <Link href="/">
+            <a>
+              <Image
+                src="/img/magnified-logo.png"
+                h="70px"
+                top="0"
+                left={2}
+                position="absolute"
+                mr="auto"
+              />
+            </a>
+          </Link>
           {isLargerThan650 ? (
             <Stack
               spacing={7}

@@ -16,7 +16,7 @@ import { RightArrow } from "styled-icons/boxicons-regular";
 import { FlagUsa, GlobeAmericas, MailBulk, Truck } from "styled-icons/fa-solid";
 
 const Home = () => {
-  const isLargerThan650 = useBreakpointValue({ base: false, md: true });
+  const isLargerThan650 = useBreakpointValue({ base: false, lg: true });
 
   return (
     <>
@@ -179,7 +179,7 @@ const Home = () => {
           fontSize={isLargerThan650 ? "imgText" : "54px"}
           textAlign="center"
           verticalAlign="middle"
-          p={isLargerThan650 ? "2em" : 3}
+          py={isLargerThan650 ? "2em" : "200px"}
           background="no-repeat center/cover url(img/klara-vernarcova-60zqbdiLHg0-unsplash.jpg)"
           bgPos="50% 45%"
         >
@@ -191,11 +191,12 @@ const Home = () => {
           justify="space-around"
           align="center"
           minH="400px"
-          maxW="100%"
+          maxW="1200px"
+          mx="auto"
         >
           <HStack my={3} align="start">
             <Square
-              size={isLargerThan650 ? "130px" : "65px"}
+              size={isLargerThan650 ? "100px" : "65px"}
               bg="primary"
               mt={3}
               borderRadius={3}
@@ -226,7 +227,7 @@ const Home = () => {
           </HStack>
           <HStack my={3} align="start">
             <Square
-              size={isLargerThan650 ? "130px" : "65px"}
+              size={isLargerThan650 ? "100px" : "65px"}
               bg="primary"
               mt={3}
               borderRadius={3}
@@ -257,7 +258,7 @@ const Home = () => {
           </HStack>
           <HStack my={3} align="start">
             <Square
-              size={isLargerThan650 ? "130px" : "65px"}
+              size={isLargerThan650 ? "100px" : "65px"}
               bg="primary"
               mt={3}
               borderRadius={3}
@@ -288,7 +289,7 @@ const Home = () => {
           </HStack>
           <HStack my={3} align="start">
             <Square
-              size={isLargerThan650 ? "130px" : "65px"}
+              size={isLargerThan650 ? "100px" : "65px"}
               bg="primary"
               mt={3}
               borderRadius={3}
