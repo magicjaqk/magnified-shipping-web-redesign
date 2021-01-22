@@ -18,7 +18,10 @@ const jobs = () => {
   const [currentFile, setCurrentFile] = useState(null);
 
   return (
-    <div>
+    <>
+      <Head>
+        <title>Jobs</title>
+      </Head>
       <Box w="100%" minH="100vh" bgColor="light" pb={6}>
         <Box w="100%" overflow="hidden">
           <Text
@@ -168,7 +171,7 @@ const jobs = () => {
           </VStack>
         </Box>
       </Box>
-    </div>
+    </>
   );
 };
 

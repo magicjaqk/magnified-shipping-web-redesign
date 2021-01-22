@@ -12,6 +12,9 @@ import Head from "next/head";
 const contact = () => {
   return (
     <>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <Box w="100%" minH="100vh" bgColor="dark" pb={6}>
         <Box maxW="80%" mx="auto" py={10}>
           <Text fontSize="imgText" textColor="secondary">

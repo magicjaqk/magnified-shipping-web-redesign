@@ -6,6 +6,9 @@ const about = () => {
 
   return (
     <>
+      <Head>
+        <title>About</title>
+      </Head>
       <Box w="100%" minH="100vh" bgColor="light" pb={6}>
         <Box w="100%" overflow="hidden">
           <Text
