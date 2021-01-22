@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { Image as NextImage } from "next/image";
 import { useState } from "react";
+import Head from "next/head";
 
 const jobs = () => {
   const isLargerThan650 = useBreakpointValue({ base: false, lg: true });
