@@ -11,12 +11,14 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Image as NextImage } from "next/image";
+import { useState } from "react";
 
 const jobs = () => {
   const isLargerThan650 = useBreakpointValue({ base: false, lg: true });
+  const [currentFile, setCurrentFile] = useState(null);
 
   return (
-    <>
+    <div>
       <Box w="100%" minH="100vh" bgColor="light" pb={6}>
         <Box w="100%" overflow="hidden">
           <Text
@@ -138,9 +140,27 @@ const jobs = () => {
                 placeholder="email@domain.com"
               />
             </FormControl>
-            <FormControl id="resume-file" isRequired>
+            <FormControl id="resume" isRequired>
               <FormLabel>Upload your resume: </FormLabel>
-              <Input variant="unstyled" type="file" />
+              <span>
+                <Button
+                  variant="outline"
+                  as="label"
+                  htmlFor="resume-file"
+                  _hover={{ bg: "gray.600" }}
+                  _active={{ bg: "gray.800" }}
+                >
+                  Upload File
+                </Button>
+                {currentFile !== null && "   " + currentFile}
+              </span>
+              <Input
+                id="resume-file"
+                variant="unstyled"
+                type="file"
+                onChange={(e) => setCurrentFile(e.target.files[0].name)}
+                hidden
+              />
             </FormControl>
             <Button colorScheme="yellow" type="submit" w="100%" mt={3}>
               Submit
@@ -148,7 +168,7 @@ const jobs = () => {
           </VStack>
         </Box>
       </Box>
-    </>
+    </div>
   );
 };
 
