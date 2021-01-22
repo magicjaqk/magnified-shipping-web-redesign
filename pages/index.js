@@ -32,6 +32,7 @@ const Home = () => {
             fontSize="imgText"
             textAlign="center"
             py={isLargerThan650 ? "1.5em" : ".5em"}
+            textShadow="2px 2px 20px black"
             px={2}
             w="100%"
             background="no-repeat center/cover url(/img/klara-vernarcova-XfNlY47n6K8-unsplash_01.jpg)"
@@ -179,6 +180,7 @@ const Home = () => {
           fontSize={isLargerThan650 ? "imgText" : "54px"}
           textAlign="center"
           verticalAlign="middle"
+          textShadow="2px 2px 20px black"
           py={isLargerThan650 ? "2em" : "200px"}
           background="no-repeat center/cover url(img/klara-vernarcova-60zqbdiLHg0-unsplash.jpg)"
           bgPos="50% 45%"

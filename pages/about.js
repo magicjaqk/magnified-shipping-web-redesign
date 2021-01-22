@@ -2,7 +2,7 @@ import { Box, Text, Flex, useBreakpointValue, Center } from "@chakra-ui/react";
 import Head from "next/head";
 
 const about = () => {
-  const isLargerThan650 = useBreakpointValue({ base: false, md: true });
+  const isLargerThan650 = useBreakpointValue({ base: false, lg: true });
 
   return (
     <>
@@ -15,7 +15,8 @@ const about = () => {
             fontSize="imgText"
             textAlign="center"
             textShadow="2px 2px 20px black"
-            py={isLargerThan650 ? "1.5em" : ".5em"}
+            py="2em"
+            minH="400px"
             px={2}
             w="100%"
             background="no-repeat center/cover url(/img/alex-perz-61qBPJeUYcE-unsplash.jpg)"
